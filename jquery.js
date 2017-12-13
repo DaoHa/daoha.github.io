@@ -156,6 +156,14 @@ function scrollBottom(){
      var h = objDiv.get(0).scrollHeight;
          objDiv.animate({scrollTop: h});
 }
+
+function upload_file_chat_box(){
+  $("img").click(function () {
+    $("#up_load_file").trigger('click');
+  });
+
+}
 /*end_Footer*/
+
 
 
