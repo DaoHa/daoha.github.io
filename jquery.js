@@ -111,4 +111,51 @@ function back_to_top(){
     });
   });
 }
+function chat_box_hide_show(){
+
+$(function() {
+    $('.chat_box_content,.chat_box_footer').hide();
+    $('.chat_box_header').addClass("fixed_chat_box");
+    var count=0;
+    $('.chat_box_header').click(function (e) {
+      
+      count++;
+      if(count %2 ==0){
+        $('.chat_box_content,.chat_box_footer').hide();
+        $(this).addClass("fixed_chat_box");
+      }
+      else{
+        $('.chat_box_content,.chat_box_footer').show();
+        $(this).removeClass("fixed_chat_box");
+      }
+     $('.chat_box_content').scrollTop($('.chat_box_content')[0].scrollHeight);
+    });
+  });
+}
+
+function chat_box_chat(){
+
+  $(function() {
+    $('.chatbox_input_chat').keydown(function (e) {
+       if (e.keyCode == 13) {
+        var contentChat=$(this).val();
+        var li_new=`${'<li class="chat_box_messeage chatbox_msg_right">'
+                +'<div class="chat_box_msg undefined undefined" id="undefined">'+
+                '<p>'+contentChat+'</p></div></li><time>16:48</time>'}`;
+        $('.chatbox_msg_right').last().after(li_new);
+        $(this).val("");
+        scrollBottom();
+          return false; 
+        }
+    });
+  });
+}
+
+function scrollBottom(){
+   var objDiv = $(".chat_box_content");
+     var h = objDiv.get(0).scrollHeight;
+         objDiv.animate({scrollTop: h});
+}
 /*end_Footer*/
+
+
