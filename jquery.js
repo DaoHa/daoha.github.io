@@ -116,17 +116,20 @@ function chat_box_hide_show(){
 $(function() {
     $('.chat_box_content,.chat_box_footer').hide();
     $('.chat_box_header').addClass("fixed_chat_box");
+    $('.fa-angle-down').addClass("fa-angle-up");
     var count=0;
     $('.chat_box_header').click(function (e) {
-      
+    
       count++;
       if(count %2 ==0){
         $('.chat_box_content,.chat_box_footer').hide();
         $(this).addClass("fixed_chat_box");
+        $('.fa-angle-down').addClass("fa-angle-up");
       }
       else{
         $('.chat_box_content,.chat_box_footer').show();
         $(this).removeClass("fixed_chat_box");
+        $('.fa-angle-down').removeClass("fa-angle-up");
       }
      $('.chat_box_content').scrollTop($('.chat_box_content')[0].scrollHeight);
     });
@@ -141,7 +144,7 @@ function chat_box_chat(){
         var contentChat=$(this).val();
         var li_new=`${'<li class="chat_box_messeage chatbox_msg_right">'
                 +'<div class="chat_box_msg undefined undefined" id="undefined">'+
-                '<p>'+contentChat+'</p></div></li><time>16:48</time>'}`;
+                '<p>'+contentChat+'</p></div><time style="clear:both">12.12.2017 22:08</time></li>'}`;
         $('.chatbox_msg_right').last().after(li_new);
         $(this).val("");
         scrollBottom();
@@ -158,7 +161,7 @@ function scrollBottom(){
 }
 
 function upload_file_chat_box(){
-  $("img").click(function () {
+  $("img.camera").click(function () {
     $("#up_load_file").trigger('click');
   });
 
