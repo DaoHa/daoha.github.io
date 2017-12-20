@@ -1344,12 +1344,16 @@ ul.chat_box_history{
     border: none;
     outline: none;
     border-radius: 100%;
-    width: 25px;
-    height: 25px;
     display: block;
-    background: url(https://chat.zamba.vn/storage/upload/avatar/noavatar.jpg) 0% 0% / 40px 40px no-repeat;
+    /* background: url(https://chat.zamba.vn/storage/upload/avatar/noavatar.jpg) 0% 0% / 40px 40px no-repeat;  */
 }
 
+.chat_box_avatar a img{
+	position: absolute;
+    left: -5px;
+    width: 25px !important;
+    height: 25px !important;
+}
 .chat_box_avatar a img{
 	width: 30px;
 	height: 30px;
